@@ -19,7 +19,7 @@ public class ExecutionTimeAspect {
         long start = System.nanoTime();
         var result = proceedingJoinPoint.proceed();
         long finish = System.nanoTime();
-        System.out.println(proceedingJoinPoint.getSignature().getName() + " takes ns: " + finish);
+        System.out.println(proceedingJoinPoint.getSignature().getName() + " takes ns: " + (finish - start));
         return result;
     }
 
